@@ -1,0 +1,398 @@
+/* -------------------- GENERAL -------------------- */
+html, body, div, h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    --blue: #0068ED;
+    --black: #000000;
+    --grey: #848484;
+    background-color: lightgrey;
+    display: flex;
+    justify-content: center;
+}
+
+
+h1, h2, h6 {
+    font-family: 'Avenir Next';
+    font-weight: bold;
+    font-style: normal;
+    color: var(--blue);
+}
+
+
+
+h3, h4 {
+    font-family: 'Avenir Next';
+    font-weight: 500;
+    font-style: normal;
+    color: var(--black);
+}
+
+h5 {
+    font-family: 'Avenir Next';
+    font-weight: 600;
+    font-style: normal;
+    color: var(--black);
+}
+
+
+h2 { font-size: 35px; }
+h3 { font-size: 30px; }
+h4 { font-size: 30px; }
+h5 { font-size: 23px; }
+h6 { font-size: 19px; }
+
+p, a {
+    font-family: 'Avenir Next';
+    font-weight: normal;
+    font-style: normal;
+    color: var(--black);
+}
+
+header, .main-header, .about-me, .experience, #connect, .stats, .listening {
+    width: 85%;
+    margin: 0px auto;
+}
+
+/* -------------------- NAV BAR -------------------- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.pages {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+}
+
+.pages a, header a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.pages a:after, .logo:after {
+    content: '';
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 1px;
+    right: 0;
+    background: var(--black);
+    transition: width .3s ease;
+}
+
+.pages a:hover:after, .logo:hover:after { 
+    width: 100%;
+    left: 0;
+    background: var(--black);
+}
+
+.logo:after, .logo:hover:after {
+    background: var(--blue);
+}
+
+/* -------------------- SQUARES -------------------- */
+.side-square {
+    position: fixed;
+    border: 3px solid rgba(242, 242, 242, 0.8);
+    width: 400px;
+    height: 400px;
+    z-index: -10000000;
+}
+
+.left-square {
+    left: -10%;
+    top: 30%;
+    transform: rotate(20deg);
+}
+
+.right-square {
+    right: -10%;
+    top: -15%;
+    transform: rotate(-20deg);
+}
+
+/* -------------------- HEADER -------------------- */
+.main-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50vh;
+}
+
+.typing { display: inline-flex; }
+
+/* -------------------- ABOUT ME -------------------- */
+.about-me {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.about-info {
+    width: 70%;
+    margin-left: 50px;
+}
+
+.about-info h4 {
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+
+.about-info b, .connect-text b {
+    font-weight: 600;
+}
+
+.about-info p, .resume { font-size: 17px; }
+
+.me-pic {
+    height: 500px;
+    border-radius: 6px;
+}
+
+.me-pic2 {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.about-info-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.resume {
+    color: var(--blue);
+    text-decoration: inherit;
+    display: inline-block;
+}
+
+.resume:after {
+    content: '';
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 1px;
+    right: 0;
+    background: var(--blue);
+    transition: width .3s ease;
+}
+
+.resume:hover:after { 
+    width: 100%;
+    left: 0;
+    background: var(--blue);
+}
+
+.social {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 170px;
+}
+
+.social img {
+    width: 27px;
+    height: auto;
+}
+
+/* -------------------- EXPERIENCE -------------------- */
+.experience {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.experience h2 {
+    align-self: flex-start;
+    margin-bottom: 50px;
+}
+
+.card-home {
+    padding: 3% 3%;
+    border-radius: 10px;
+    transition: .15s ease-in-out;
+}
+
+.card h6 { color: var(--grey); }
+.card img, [class="card-home"] img {
+    width: 320px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.4);
+    transition: transform .3s ease;
+}
+
+.card-home img:hover, .card img:hover, .listening img:hover {
+    transform: scale(0.97);
+}
+
+.card p {
+    width: 320px;
+    margin-top: 10px;
+    font-size: 17px;
+}
+
+.see-more {
+    text-decoration: none;
+    box-shadow: none;
+    align-self: center;
+}
+
+.see-more:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.see-more h5 { padding-right: 15px; }
+
+.see-more div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    cursor: pointer;
+}
+
+.arrow { transition: 0.2s; }
+.see-more:hover .arrow { transform: translateX(6px); }
+
+/* -------------------- CONNECT -------------------- */
+#connect { margin: 50px auto; }
+
+.connect-text { margin-top: 30px; }
+.connect-text p, .connect-text h4 { font-size: 22px; }
+.connect-text b { color: var(--blue); }
+
+.email {
+    color: var(--blue);
+    margin-bottom: 20px;
+}
+
+/* -------------------- STATS -------------------- */
+.stats {
+    margin-top: 150px;
+}
+
+.stats h2 {
+    align-self: flex-start;
+    margin-bottom: 50px;
+}
+
+.numbers {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90%;
+}
+
+.numbers h5 { font-size: 17px; }
+.numbers h1 { font-size: 70px; }
+.numbers div { text-align: center; }
+
+/* -------------------- LISTENING -------------------- */
+.listening {
+    margin-top: 150px;
+}
+
+.listening-row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.container { 
+    background-color: white;
+    width: 50%;
+}
+
+.listening-row img {
+    width: 250px;
+    border-radius: 6px;
+    transition: transform .3s ease;
+}
+
+/* -------------------- MEDIA QUERIES -------------------- */
+/* Phone */
+@media (max-width: 650px) {
+    header, .main-header, .about-me, .experience, #connect, .stats {
+        width: 90vw;
+        margin: 0px auto;
+    }
+
+    /* Nav Bar */
+    header { margin-top: 5%; }
+    .pages { width: 200px; }
+    .pages a { font-size: 14px; }
+    h1 { font-size: 30px; }
+
+    .side-square { display: none; }
+
+    /* Header */
+    h2 { font-size: 30px; }
+    h3 { font-size: 25px; }
+
+    .about-me, .row, .numbers {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 0px;
+    }
+
+    .me-pic, .me-pic2 {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .social img { width: 27px; height: auto; }
+    .about-info { margin: 20px 0px 0px 0px; }
+    .about-info-bottom { flex-direction: column; }
+    .resume { margin-bottom: 10px; }
+
+    .experience, #connect, .stats { margin-top: 50px; }
+    .card-home, .card, .numbers div { margin-bottom: 30px; }
+    .numbers h1 { font-size: 60px; }
+
+    /* Connect */
+    #connect { margin-bottom: 50px; }
+}
+
+/* Tablet - Landscape */
+@media (device-width: 1024px) and (orientation: landscape) {
+    .me-pic { height: 380px; }
+    .card img, [class="card-home"] img, .card p { width: 260px; }
+    h5 { font-size: 20px; }
+    h6 { font-size: 17px; }
+    .connect-text p, .connect-text h4 { font-size: 20px; }
+    .numbers h5 { font-size: 17px; }
+    .numbers h1 { font-size: 60px; }
+    
+}
