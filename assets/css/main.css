@@ -329,7 +329,6 @@ header {
 .container { 
     background-color: white;
     width: 50%;
-    min-width: 500px;
 }
 
 .listening-row img {
