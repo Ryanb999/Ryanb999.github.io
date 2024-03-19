@@ -1,3 +1,4 @@
+
 declare class TypeIt {
     constructor(element: string | HTMLElement, options: TypeIt.Options);
 }
